@@ -1,0 +1,586 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container central */
+.container {
+  max-width: 960px;
+  margin: 36px auto;
+  padding: 20px;
+  margin-top: -15px;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+/* Formulário */
+.form-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  width: 380px;
+  margin: 40px auto;
+}
+
+.form-card h2 {
+  margin: 0 0 16px;
+  color: #1f6f4a;
+  text-align: center;
+}
+
+.form-card label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 6px;
+  font-size: 14px;
+}
+
+.form-card input[type="number"],
+.form-card select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #dfe6ee;
+  font-size: 14px;
+  background: #fbfdff;
+}
+
+.form-card button {
+  width: 100%;
+  padding: 11px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #a8cb19;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* botão primário dentro do form-card */
+.form-card button.btn-primary {
+  background: #a8cb19;
+  color: #fff;
+}
+
+.form-card button.btn-primary:hover {
+  opacity: 0.95;
+}
+
+.form-card button:hover {
+  opacity: 0.95;
+}
+
+/* Botão primário fora do form (ex: Resultado da Dieta) */
+.btn-primary {
+  background: #a8cb19;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: #fff;
+  color: #1f6f4a;
+  border: 2px solid #1f6f4a;
+}
+
+.btn-outline:hover {
+  background: #1f6f4a;
+  color: #fff;
+}
+
+/* Resultado */
+.result-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  width: 760px;
+  margin: 24px auto;
+}
+
+.result-card h1 {
+  margin-top: 0;
+  color: #1f3a2d;
+  text-align: center;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.result-table th,
+.result-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f3f6;
+  text-align: left;
+  font-size: 15px;
+}
+
+.result-table th {
+  background: linear-gradient(90deg, #1f6f4a, #2a9d6f);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+}
+
+.result-table tr:last-child td {
+  border-bottom: none;
+}
+
+.highlight {
+  font-weight: 700;
+  color: #1f6f4a;
+}
+
+/* Botão voltar / recalcular */
+.actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+
+/* ====== Cards de resultados ====== */
+.result-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 12px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #1f6f4a;
+}
+
+.card p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.orientacoes {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: #e1ecf7;
+  border-left: 5px solid #bfdff6;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* --- Animação de entrada suave --- */
+.orientacoes {
+  opacity: 0;
+  transform: translateY(20px);
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 32px;
+  line-height: 1.6;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Quando o usuário rolar até o elemento */
+.orientacoes.visivel {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Define os frames da animação */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== Cabeçalho ====== */
+.site-header {
+  background: #ffffff;
+  color: #585656;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-left: 0;
+}
+
+.site-header .logo img {
+  max-height: 60px;
+  width: auto;
+  display: block;
+  margin-left: 0;
+  transition: transform 0.3s ease;
+}
+
+.site-header .logo img:hover {
+  transform: scale(1.1);
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: 550px;
+  white-space: nowrap;
+}
+
+/* Links padrão */
+.site-nav a {
+  color: #000000;
+  text-decoration: none;
+  margin-left: 16px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.site-nav a:hover {
+  color: #a8cb19;
+}
+.assinatura {
+  padding: 11px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #52db6e;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.3s ease;
+}
+
+.assinatura:hover {
+  transform: scale(1.1);
+  background: #63db2b;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* ====== Alerta de erro ====== */
+.alerta-container {
+  margin-bottom: 25px;
+}
+
+.alerta-imc {
+  padding: 18px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  background: #fff9e6;
+  border-left: 5px solid #ffcc00;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  color: #333;
+  animation: fadeInDown 0.6s ease-in-out;
+}
+
+.alerta-imc strong {
+  color: #1f6f4a;
+}
+
+.alerta-ganhar {
+  background: #e7f8ef;
+  border-left-color: #52b788;
+}
+
+.alerta-perder {
+  background: #fdecea;
+  border-left-color: #e63946;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 220px;
+    z-index: 999;
+  }
+
+  .site-nav.active {
+    display: flex;
+  }
+
+  .site-nav a {
+    margin: 12px 0;
+    font-size: 16px;
+  }
+
+  .assinatura {
+    margin-top: 14px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.site-footer {
+  text-align: center;
+}
+
+/* ====== Página de Login ====== */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.login-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #84a294;
+}
+
+.login-box .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dfe6ee;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fbfdff;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #1f6f4a;
+  box-shadow: 0 0 0 2px rgba(31, 111, 74, 0.15);
+}
+
+.login-box .btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #a8cb19;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.login-box .btn:hover {
+  opacity: 0.9;
+}
+
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-text a {
+  color: #1f6f4a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/*customizando select*/
+.custom-select {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Estilo da área de visualização (o botão que simula o select) */
+.custom-select .selected {
+  background: #fbfdff;
+  border: 1px solid #dfe6ee;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+/* Substitui a regra antiga que mirava no <select> nativo */
+.custom-select .selected:hover {
+  border-color: #a8cb19;
+  box-shadow: 0 0 5px #a8cb19;
+  background-color: #f9fff0;
+}
+
+/* Estilo do container das opções (a lista dropdown) */
+.custom-select .options {
+  display: none; /* Controlado pelo JavaScript para mostrar/esconder */
+  position: absolute;
+  background: #fff;
+  border: 1px solid #dfe6ee;
+  border-radius: 8px;
+  margin-top: 2px;
+  width: 100%;
+  /* Alto z-index para garantir que ele flutue sobre outros elementos */
+  z-index: 1000;
+}
+
+/* Estilo de cada item de opção */
+.custom-select .options div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Efeito de Hover em cada opção da lista */
+.custom-select .options div:hover {
+  background-color: #a8cb19;
+  color: #fff;
+}
+
+/* ====== Responsividade ====== */
+@media (max-width: 768px) {
+  .site-header {
+    height: auto; /* deixa o cabeçalho se ajustar no mobile */
+    padding: 10px 0;
+  }
+
+  .site-header .logo img {
+    max-height: 80px; /* logo menor no mobile */
+    margin-left: 0; /* remove deslocamento */
+  }
+
+  .menu-toggle {
+    display: block; /* aparece no mobile */
+  }
+
+  .site-nav {
+    display: none; /* esconde links */
+    flex-direction: column;
+    background: #1f6f4a;
+    position: absolute;
+    top: 60px; /* logo abaixo do cabeçalho */
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .site-nav a {
+    margin: 10px 0;
+    display: block;
+  }
+
+  .site-nav.active {
+    display: flex; /* mostra quando clica no botão */
+    background: #fff;
+    text-align: justify;
+  }
+}
