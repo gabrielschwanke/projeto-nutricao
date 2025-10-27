@@ -1,11 +1,22 @@
-<?php 
+<?php
+session_start();
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['usuario']['id'])) {
+    // Se não estiver logado, redireciona para a página de login
+    header("Location: login.php");
+    exit;
+}
+
 $pageTitle = "Calculadora de Dieta - Formulário";
-include 'header.php'; 
+$bodyClass = "formulario-page";
+include 'header.php';
 ?>
 
-<div class="container">
-    <h2>Preencha seus dados</h2>
+<div class="formulario-container">
+    
     <form action="processa.php" method="post" class="form-card">
+        <h2>Preencha seus dados</h2>
 
         <div class="form-group">
             <label for="sexo">Sexo:</label>
