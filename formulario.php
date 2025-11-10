@@ -1,13 +1,15 @@
 <?php 
+require 'verifica_login.php';
 $pageTitle = "Calculadora de Dieta - Formulário";
+$bodyClass = "formulario-page";
 include 'header.php'; 
 ?>
 
-<div class="container">
-    <h2>Preencha seus dados</h2>
+    
     <form action="processa.php" method="post" class="form-card">
 
         <div class="form-group">
+            <h2>Preencha seus dados</h2>
             <label for="sexo">Sexo:</label>
             <div class="custom-select">
                 <div class="selected">Selecione</div>
