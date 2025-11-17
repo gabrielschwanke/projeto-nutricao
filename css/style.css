@@ -16,8 +16,6 @@ body {
   max-width: 960px;
   margin: 36px auto;
   padding: 20px;
-  
-
 }
 
 .container h2 {
@@ -26,7 +24,7 @@ body {
 
 /* === Fundo exclusivo da página de formulário === */
 body.formulario-page {
-  background:url('../img/bgfundo33.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo33.jpeg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -47,7 +45,7 @@ body.formulario-page::before {
 
 /* Centraliza o formulário na tela */
 body.formulario-page .formulario-container {
-  min-height: 100px 0;/* altura da tela menos header e footer */
+  min-height: 100px 0; /* altura da tela menos header e footer */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +76,8 @@ body.formulario-page .site-footer {
   margin-top: -80px;
   text-align: left;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease,
+    border-color 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -89,12 +88,15 @@ body.formulario-page .site-footer {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(168,203,25,0.25), transparent 60%);
+  background: linear-gradient(
+    135deg,
+    rgba(168, 203, 25, 0.25),
+    transparent 60%
+  );
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none; /* ← ESSENCIAL: impede o bloqueio dos campos */
 }
-
 
 .form-card:hover::before {
   opacity: 1;
@@ -170,8 +172,6 @@ body.formulario-page .site-footer {
   box-shadow: 0 6px 22px rgba(168, 203, 25, 0.4);
 }
 
-
-
 /* ======== CUSTOM SELECT ======== */
 .custom-select {
   position: relative;
@@ -191,7 +191,6 @@ body.formulario-page .site-footer {
   color: #333;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-
 
 .custom-select .selected:hover {
   border-color: #a8cb19;
@@ -282,7 +281,7 @@ body.formulario-page .site-footer {
 /* ======== PÁGINA DE RESULTADO (processa.php) ======== */
 body.processa-page {
   position: relative;
-  background: url('../img/bgfundo36.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo36.jpeg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -297,7 +296,7 @@ body.processa-page::before {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.79);
-  z-index: 0; /* garante que o overlay fique atrás do conteúdo */
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -323,7 +322,6 @@ body.processa-page .container {
   margin-bottom: 25px;
   font-size: 2rem;
 }
-
 
 /* Resultado-card */
 .result-card {
@@ -391,7 +389,6 @@ body.processa-page .container {
   border: 1px solid transparent;
 }
 
-
 /* ====== Cards de resultados ====== */
 .result-header {
   text-align: center;
@@ -450,130 +447,104 @@ body.processa-page .container {
   font-size: 14px;
   color: #bcbcbc;
 }
-
-/* Orientações com animação */
-.orientacoes {
-  margin-top: 20px;
-  padding: 15px 20px;
-  background-color: #e1ecf7;
-  border-left: 5px solid #bfdff6;
-  border-radius: 8px;
-  font-size: 15px;
-  color: #333;
-  line-height: 1.5;
-}
-
-
-.orientacoes {
-  opacity: 0;
-  transform: translateY(20px);
-  background: #f9fafb;
-  border-radius: 12px;
-  padding: 20px;
+/* === ORIENTAÇÕES – GLASSMORPHISM === */
+.orientacoes { 
   margin-top: 32px;
-  line-height: 1.6;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  padding: 28px 30px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.9s ease-out, transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    filter .8s ease;
+  line-height: 1.7;
 }
 
-
+/* ESTADO FINAL AO APARECER */
 .orientacoes.visivel {
-  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
 
+/* =======================
+   TÍTULOS
+   ======================= */
+.orientacoes h2,
+.dicas-alimentacao h3,
+.dicas-macros h3 {
+  color: #a8cb19;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* =======================
+   TEXTO
+   ======================= */
+.orientacoes p,
+.dicas-alimentacao p,
+.dicas-macros p {
+  color: #fcfcfc;
+  margin-bottom: 10px;
 } 
 
-/* ===== Seções internas dentro de .orientacoes ===== */
+/* Strong / Italic */
+.orientacoes strong {
+  color: #a8cb19;
+}
+
+.orientacoes em {
+  color: #ffffff;
+  font-style: italic;
+}
+
+.orientacoes li {
+  color: #fff;
+}
+
+.orientacoes h3 {
+  color: #a8cb19;
+}
+
+/* =======================
+   SEÇÕES INTERNAS
+   ======================= */
 .dicas-alimentacao,
 .dicas-macros {
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid #eef0f3;
-  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  border-radius: 14px;
+  padding: 22px 26px;
   margin-top: 20px;
-  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(10px) saturate(160%);
+  box-shadow: 0 6px 18px rgba(54, 54, 54, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dicas-alimentacao:hover,
 .dicas-macros:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(168, 203, 25, 0.15);
+  box-shadow: 0 8px 22px rgba(168, 203, 25, 0.2);
 }
 
-.orientacoes h2,
-.dicas-alimentacao h3,
-.dicas-macros h3 {
-  color: #a8cb19;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.orientacoes p,
-.dicas-alimentacao p,
-.dicas-macros p {
-  color: #333;
-  margin-bottom: 10px;
-  line-height: 1.7;
-}
-
-.orientacoes strong {
-  color: #000;
-}
-
-.orientacoes em {
-  color: #555;
-  font-style: italic;
-}
-
-/* Ícones e espaçamento */
-.orientacoes br + br {
-  line-height: 2;
-}
-
-/* Responsividade */
+/* =======================
+   MOBILE
+   ======================= */
 @media (max-width: 768px) {
+  .orientacoes {
+    padding: 22px;
+  }
+
   .dicas-alimentacao,
   .dicas-macros {
-    padding: 16px;
+    padding: 18px;
   }
 }
-
-/*===Estilo para Orientações===*/
-.macros-section {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-  padding: 28px;
-  margin-top: 30px;
-  line-height: 1.7;
-}
-
-.macros-section h2, 
-.macros-section h3 {
-  color: #a8cb19;
-  margin-bottom: 10px;
-}
-
-.macros-section ul {
-  margin: 10px 0 20px 20px;
-}
-
-.macros-section p {
-  color: #333;
-  margin-bottom: 12px;
-}
-
-
 
 /* ====== Cabeçalho ====== */
 .site-header {
@@ -627,8 +598,7 @@ body.processa-page .container {
   margin-left: 39rem;
   white-space: nowrap;
   margin-inline-end: 0px;
-}
-
+} 
 
 .site-nav a {
   color: #000000;
@@ -666,7 +636,7 @@ body.processa-page .container {
 }
 /* ====== Página de Login ====== */
 body.login-page {
-  background: url('../img/bgfundo22.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo22.jpeg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -717,7 +687,6 @@ body.login-page::before {
   text-align: left;
   margin-bottom: 8px;
   font-weight: 600;
-
 }
 
 .login-box input[type="email"],
@@ -759,7 +728,6 @@ body.login-page::before {
   margin-top: 16px;
   color: #fff;
   font-size: 14px;
-
 }
 
 .signup-text a {
@@ -774,7 +742,7 @@ body.login-page::before {
 
 /* ====== Página de Cadastro ====== */
 body.cadastro-page {
-  background: url('../img/bgfundo22.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo22.jpeg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -888,11 +856,9 @@ body.cadastro-page::before {
   text-decoration: underline;
 }
 
-
-
 /* ======== PÁGINA DE PERFIL ======== */
 body.perfil-page {
-  background: url('../img/bgfundo25.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo25.jpeg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -1084,7 +1050,7 @@ body.perfil-page::before {
 
 /* ======== PÁGINA DE SUPORTE ======== */
 body.suporte-page {
-  background: url('../img/bgfundo25.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo25.jpeg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -1190,7 +1156,7 @@ body.suporte-page::before {
 
 /* ======== PÁGINA DE DESEMPENHO ======== */
 body.desempenho-page {
-  background: url('../img/bgfundo25.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo25.jpeg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -1251,12 +1217,11 @@ body.desempenho-page::before {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(168, 203, 25, 0.5);
   border-color: #a8cb19;
-}
-
+} 
 
 /* ====== Página de Planos ====== */
 body.planos-page {
-  background: url('../img/bgfundo25.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo25.jpeg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -1268,7 +1233,7 @@ body.planos-page::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.79);
+  background: rgba(0, 0, 0, 0.79);
   z-index: 0;
 }
 
@@ -1295,18 +1260,17 @@ body.planos-page::before {
   justify-content: center;
   gap: 28px;
   padding: 20px;
-
 }
 
 .plano-card {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 30px;
   width: 300px;
   color: #fff;
-  box-shadow: 0 6px 18px rgba(15,23,42,0.15);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -1339,7 +1303,7 @@ body.planos-page::before {
 
 .plano-card ul li {
   padding: 6px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .plano-card .preco {
@@ -1370,12 +1334,11 @@ body.planos-page::before {
 /* ====== Rodapé ====== */
 .site-footer {
   text-align: center;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   color: #333;
   font-size: 14px;
-
 }
 
 .site-footer a {
@@ -1427,19 +1390,22 @@ body.planos-page::before {
 /* =====Pagina contato=====*/
 
 body.contato-page {
-  background: url('../img/bgfundo2.png') no-repeat center center fixed;
+  background: url("../img/bgfundo2.png") no-repeat center center fixed;
   background-size: cover;
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-top:0;
+  margin-top: 0;
 }
 
 body.contato-page::before {
   content: "";
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.79);
   z-index: 0;
 }
@@ -1503,7 +1469,12 @@ body.contato-page::before {
 .form-group input[type="number"],
 .form-group input[type="text"] {
   color: #000; /* preto */
-  background: rgba(255, 255, 255, 0.9); /* opcional: fundo mais claro para contraste */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* opcional: fundo mais claro para contraste */
 }
 
 .form-group input::placeholder,
@@ -1537,20 +1508,23 @@ body.contato-page::before {
 
 /* Fundo com imagem e camada escura */
 body.funcionalidades-page {
-  background: url('../img/bgfundo28.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo28.jpeg") no-repeat center center fixed;
   background-size: cover;
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-top:0;
+  margin-top: 0;
 }
 
 body.funcionalidades-page::before {
   content: "";
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.79);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.79);
   z-index: 0;
 }
 
@@ -1595,14 +1569,14 @@ body.funcionalidades-page::before {
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 30px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #f1f1f1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .passo-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(168,203,25,0.3);
+  box-shadow: 0 10px 20px rgba(168, 203, 25, 0.3);
   border-color: #a8cb19;
 }
 
@@ -1653,7 +1627,7 @@ body.funcionalidades-page::before {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('img/fundo-verde.jpg') center/cover no-repeat;
+  background: url("img/fundo-verde.jpg") center/cover no-repeat;
   position: relative;
 }
 
@@ -1803,13 +1777,10 @@ input:checked + .slider:before {
   transform: scale(1.05);
 }
 
-
-
-
 /* =====Pagina Quem somos===== */
 
 body.sobre-page {
-  background: url('../img/bgfundo26.jpeg') no-repeat center center fixed;
+  background: url("../img/bgfundo26.jpeg") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
@@ -1822,7 +1793,10 @@ body.sobre-page {
 body.sobre-page::before {
   content: "";
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.79);
   z-index: 0;
 }
@@ -1884,7 +1858,6 @@ body.sobre-page::before {
   color: #a8cb19;
 }
 
-
 @media (max-width: 768px) {
   .site-header .container {
     flex-wrap: wrap;
@@ -1904,7 +1877,7 @@ body.sobre-page::before {
     display: none;
     flex-direction: column;
     gap: 12px;
-    background: rgba(255,255,255,0.95);
+    background: rgba(255, 255, 255, 0.95);
     position: absolute;
     top: 70px;
     right: 0;
