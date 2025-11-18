@@ -448,7 +448,7 @@ body.processa-page .container {
   color: #bcbcbc;
 }
 /* === ORIENTAÇÕES – GLASSMORPHISM === */
-.orientacoes { 
+.orientacoes {
   margin-top: 32px;
   padding: 28px 30px;
   background: rgba(255, 255, 255, 0.16);
@@ -460,7 +460,7 @@ body.processa-page .container {
   opacity: 0;
   transform: translateY(35px);
   transition: opacity 0.9s ease-out, transform 1s cubic-bezier(0.22, 1, 0.36, 1),
-    filter .8s ease;
+    filter 0.8s ease;
   line-height: 1.7;
 }
 
@@ -490,7 +490,7 @@ body.processa-page .container {
 .dicas-macros p {
   color: #fcfcfc;
   margin-bottom: 10px;
-} 
+}
 
 /* Strong / Italic */
 .orientacoes strong {
@@ -598,7 +598,7 @@ body.processa-page .container {
   margin-left: 39rem;
   white-space: nowrap;
   margin-inline-end: 0px;
-} 
+}
 
 .site-nav a {
   color: #000000;
@@ -1217,7 +1217,7 @@ body.desempenho-page::before {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(168, 203, 25, 0.5);
   border-color: #a8cb19;
-} 
+}
 
 /* ====== Página de Planos ====== */
 body.planos-page {
