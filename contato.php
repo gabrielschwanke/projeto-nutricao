@@ -26,7 +26,7 @@ include 'header.php';
         <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
       </div>
 
-      <button type="submit" class="btn-teste">Enviar mensagem</button>
+      <button type="button" class="btn-teste">Enviar mensagem</button>
     </form>
   </div>
 </main>

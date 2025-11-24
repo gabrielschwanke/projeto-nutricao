@@ -43,7 +43,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <hr>
             <a href="suporte.php">Suporte</a>
             <a href="desempenho.php">Desempenho</a>
-            <a href="/">Configurações</a>
+            <a href="">Configurações</a>
             <a href="logout.php" class="sair">Sair</a>
           </div>
         </div>
