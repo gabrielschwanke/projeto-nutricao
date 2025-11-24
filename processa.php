@@ -159,7 +159,44 @@ switch ($objetivo) {
     ";
     break;
     case "manter":
-        $orientacao = "⚖️ A manutenção calórica ocorre quando a ingestão de calorias é aproximadamente igual ao gasto energético diário...";
+        $orientacao = "
+        <div class='macros-section'>
+        <h2>🥗 Como distribuir seus macronutrientes (para manutenção do peso)</h2>
+        <p>Manter o peso de forma saudável envolve <strong>equilibrar bem os macronutrientes</strong> — proteínas, carboidratos e gorduras — garantindo energia suficiente para o dia a dia sem excessos.</p>
+        <p>A seguir, veja como cada macronutriente contribui e como ajustar suas proporções para <strong>manter seu corpo em equilíbrio</strong> sem ganhar ou perder peso.</p>
+
+        <h3>🍗 1. Proteínas (25–30%)</h3>
+        <p>As proteínas ajudam a <strong>preservar a massa muscular</strong>, promovem <strong>saciedade</strong> e auxiliam no bom funcionamento do metabolismo.</p>
+        <p><strong>Boas fontes:</strong> Frango, peixe, ovos, carne magra, iogurte natural, queijo cottage, feijão, lentilha, grão-de-bico.</p>
+        <p><em>💡 Dica:</em> Inclua uma fonte de proteína em todas as refeições para manter a saciedade ao longo do dia.</p>
+
+        <h3>🍚 2. Carboidratos (40–50%)</h3>
+        <p>Carboidratos são essenciais para fornecer <strong>energia constante</strong>, especialmente se você é ativo no dia a dia.</p>
+        <p><strong>Boas fontes:</strong> Arroz, batata-doce, aipim, aveia, quinoa, frutas, pão integral, legumes e vegetais.</p>
+        <p><em>💡 Dica:</em> Prefira carboidratos complexos e distribua-os ao longo do dia para evitar picos de fome.</p>
+
+        <h3>🥑 3. Gorduras boas (25–30%)</h3>
+        <p>Gorduras saudáveis ajudam a regular hormônios, dar saciedade e melhorar a absorção de vitaminas.</p>
+        <p><strong>Boas fontes:</strong> Azeite, abacate, castanhas, amendoim, sementes, salmão e azeite de oliva.</p>
+        <p><em>💡 Dica:</em> Pequenas porções já bastam — 1 colher de azeite ou um punhado de castanhas por dia.</p>
+
+        <h3>⚖️ Distribuição sugerida</h3>
+        <ul>
+            <li><strong>Proteínas:</strong> 25–30%</li>
+            <li><strong>Carboidratos:</strong> 40–50%</li>
+            <li><strong>Gorduras boas:</strong> 25–30%</li>
+        </ul>
+
+        <h3>🔥 Resumo prático</h3>
+        <ul>
+            <li>🍗 Mantenha proteínas em todas as refeições.</li>
+            <li>🍚 Prefira carboidratos complexos e variações integrais.</li>
+            <li>🥑 Inclua gorduras boas em pequenas quantidades.</li>
+            <li>🥦 Consuma fibras (frutas, legumes e verduras) para boa digestão.</li>
+            <li>💧 Hidrate-se bem ao longo do dia.</li>
+            <li>⏱️ Mantenha horários regulares para refeições.</li>
+        </ul>
+        </div>";
         break;
     case "ganhar":
     $orientacao = "
