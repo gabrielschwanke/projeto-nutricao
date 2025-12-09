@@ -1,0 +1,26 @@
+# === Arquivos do XAMPP e sistema ===
+/xampp/
+*.log
+*.tmp
+
+# === Arquivos de configuração sensíveis ===
+/config.php
+/conexao.php
+
+# === Diretórios de cache ou temporários ===
+/vendor/
+/node_modules/
+/tmp/
+/cache/
+/.venv/
+
+# === Arquivos de sistema e editor ===
+.DS_Store
+Thumbs.db
+*.bak
+*.swp
+*.swo
+
+# === Configurações locais do VS Code ===
+.vscode/
+.env
