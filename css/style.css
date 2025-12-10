@@ -307,6 +307,10 @@ body.processa-page .container {
   z-index: 1;
 }
 
+body.processa-page header {
+  z-index: 9999 !important;
+}
+
 .processa-page .container {
   flex: 1;
   max-width: 1100px;
@@ -633,6 +637,8 @@ body.processa-page .container {
 
 .menu-toggle {
   display: none;
+  z-index: 9999;
+  position: relative;
 }
 /* ====== Página de Login ====== */
 body.login-page {
@@ -1375,6 +1381,7 @@ body.planos-page::before {
   .site-nav {
     margin-left: auto;
     gap: 16px;
+    z-index: 10;
   }
 
   .planos-grid {
@@ -1857,6 +1864,17 @@ body.sobre-page::before {
   left: 0;
   color: #a8cb19;
 }
+@media (max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 768px) {
   .site-header .container {
@@ -1871,22 +1889,48 @@ body.sobre-page::before {
     font-size: 26px;
     color: #000;
     cursor: pointer;
+    z-index: 9999;
+    position: relative;
   }
 
   .site-nav {
     display: none;
     flex-direction: column;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.95);
+    gap: 14px;
+    padding: 22px;
     position: absolute;
     top: 70px;
-    right: 0;
-    padding: 20px;
-    border-radius: 0 0 10px 10px;
+    right: 10px;
+    width: 220px;
+    background: rgba(125, 126, 124, 0.95);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    opacity: 0;
+    transform: translateY(-10px);
   }
 
   .site-nav.active {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .perfil-dropdown {
+    background: rgba(125, 126, 124, 0.95);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    opacity: 0;
+    transform: translateY(-10px);
   }
 
   .plano-card {
