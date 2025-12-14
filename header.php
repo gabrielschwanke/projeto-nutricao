@@ -48,7 +48,7 @@ if (session_status() === PHP_SESSION_NONE) {
           </div>
         </div>
       <?php else: ?>
-        <a href="login.php">Login</a>
+        <a href="index.php">Login</a>
       <?php endif; ?>
     </nav>
   </div>

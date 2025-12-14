@@ -32,7 +32,7 @@ include 'header.php';
             <button type="submit" class="btn">Cadastrar</button>
         </form>
 
-        <p class="cadastro-text">Já tem conta? <a href="login.php">Entrar</a></p>
+        <p class="cadastro-text">Já tem conta? <a href="index.php">Entrar</a></p>
     </div>
 </div>
 

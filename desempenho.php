@@ -4,7 +4,7 @@ require 'conexao.php';
 
 // 🔒 Verifica login
 if (!isset($_SESSION['usuario']['id'])) {
-  header("Location: login.php");
+  header("Location: index.php");
   exit;
 }
 

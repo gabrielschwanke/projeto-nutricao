@@ -4,7 +4,7 @@ require 'conexao.php';
 
 // 🔒 CORREÇÃO: Verifica se o array 'usuario' existe E se a chave 'id' está presente
 if (!isset($_SESSION['usuario']['id'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 
