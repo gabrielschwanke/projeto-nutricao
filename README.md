@@ -1,168 +1,191 @@
-# 🥗 Calculadora Nutricional --- Macronutrientes & Dicas Alimentares
+# 🥗 Nutrition Calculator --- Macronutrients & Dietary Tips
 
-Um sistema completo desenvolvido em **PHP + MySQL** para calcular a
-quantidade ideal de **macronutrientes** (proteínas, carboidratos e
-gorduras) de acordo com o objetivo do usuário: **perder peso, manter o
-peso ou ganhar massa muscular**.
+A complete system developed using **PHP + MySQL** to calculate the
+ideal amount of **macronutrients** (proteins, carbohydrates, and fats)
+according to the user's goal: **lose weight, maintain weight, or gain muscle mass**.
 
-Além disso, o sistema apresenta **orientações personalizadas**, gráficos
-de desempenho, animações modernas e páginas informativas para auxiliar o
-usuário durante sua evolução nutricional.
+In addition, the system provides **personalized guidance**, performance
+charts, modern animations, and informational pages to assist the user
+throughout their nutritional progress.
 
-------------------------------------------------------------------------
+---
 
-## 🚀 Funcionalidades Principais
+## 🚀 Main Features
 
--   🔐 **Autenticação**
-    -   Login, cadastro, logout e proteção de rotas.
--   ⚖️ **Cálculo nutricional personalizado**
-    -   Usa dados como idade, peso, altura, sexo e objetivo.
-    -   Calcula calorias diárias.
-    -   Gera proporção de macronutrientes (carboidratos, proteínas e
-        gorduras).
-    -   Exibe tabela detalhada para cada objetivo.
--   📊 **Página de desempenho**
-    -   Gráficos que exibem evolução e registros do usuário.
-    -   Visualização dinâmica com Chart.js.
--   🧭 **Páginas informativas**
-    -   Sobre\
-    -   Funcionalidades\
-    -   Contato\
-    -   Suporte\
-    -   Planos
--   🎨 **Interface moderna**
-    -   Totalmente responsiva
-    -   Componentes animados
-    -   Campos customizados e UI refinada
+* 🔐 **Authentication**
 
-------------------------------------------------------------------------
+  * Login, registration, logout, and route protection.
 
-## 🛠️ Tecnologias Utilizadas
+* ⚖️ **Personalized nutritional calculation**
 
--   **PHP 7+**
--   **MySQL**
--   **HTML5 / CSS3**
--   **JavaScript**
--   **Chart.js**
--   **Custom CSS Animations**
+  * Uses data such as age, weight, height, gender, and goal.
+  * Calculates daily calorie needs.
+  * Generates macronutrient distribution (carbohydrates, proteins, and fats).
+  * Displays a detailed table for each goal.
 
-------------------------------------------------------------------------
+* 📊 **Performance page**
 
-## 📷 Capturas de Tela
+  * Charts showing user progress and records.
+  * Dynamic visualization using Chart.js.
 
-### Tela de Login
-![Tela de Login](img/imagens/login.png)
+* 🧭 **Informational pages**
+
+  * About\
+  * Features\
+  * Contact\
+  * Support\
+  * Plans
+
+* 🎨 **Modern interface**
+
+  * Fully responsive
+  * Animated components
+  * Custom fields and refined UI
+
+---
+
+## 🛠️ Technologies Used
+
+* **PHP 7+**
+* **MySQL**
+* **HTML5 / CSS3**
+* **JavaScript**
+* **Chart.js**
+* **Custom CSS Animations**
+
+---
+
+## 📷 Screenshots
+
+### Login Screen
+
+![Login Screen](img/imagens/login.png)
 
 ### Dashboard
+
 ![Dashboard](img/imagens/dashboard.png)
 
-### Cálculo de Macronutrientes
-![Cálculo](img/imagens/calculo.png)
+### Macronutrient Calculation
 
-### Página de Desempenho
-![Desempenho](img/imagens/desempenho.png)
-------------------------------------------------------------------------
+![Calculation](img/imagens/calculo.png)
 
-## 📦 Como instalar e rodar localmente (XAMPP)
+### Performance Page
 
-### 🔧 Pré-requisitos
+![Performance](img/imagens/desempenho.png)
 
--   XAMPP instalado (Apache + MySQL)\
--   Navegador atualizado\
--   Git (opcional)
+---
 
-------------------------------------------------------------------------
+## 📦 How to Install and Run Locally (XAMPP)
 
-### **1️⃣ Clone o repositório**
+### 🔧 Prerequisites
 
-``` bash
+* XAMPP installed (Apache + MySQL)\
+* Updated browser\
+* Git (optional)
+
+---
+
+### **1️⃣ Clone the repository**
+
+```bash
 git clone https://github.com/gabrielschwanke/projeto-nutricao.git
 ```
 
-Ou baixe o ZIP no GitHub.
+Or download the ZIP from GitHub.
 
-------------------------------------------------------------------------
+---
 
-### **2️⃣ Mover para o diretório do servidor local**
+### **2️⃣ Move to the local server directory**
 
 #### Windows:
 
-    C:\\xampp\\htdocs\\calculadora-nutricional
+```
+C:\xampp\htdocs\calculadora-nutricional
+```
 
 #### macOS / Linux:
 
-    /opt/lampp/htdocs/calculadora-nutricional
+```
+/opt/lampp/htdocs/calculadora-nutricional
+```
 
-------------------------------------------------------------------------
+---
 
-### **3️⃣ Inicie o servidor**
+### **3️⃣ Start the server**
 
-Abra o painel do XAMPP e ative:
+Open the XAMPP control panel and activate:
 
-✔ Apache\
+✔ Apache
 ✔ MySQL
 
-------------------------------------------------------------------------
+---
 
-### **4️⃣ Criar o banco de dados**
+### **4️⃣ Create the database**
 
-1.  Acesse: http://localhost/phpmyadmin\
-2.  Clique em **Novo**\
-3.  Crie o banco de dados com o nome:
+1. Access: http://localhost/phpmyadmin\
 
-    dieta_db
+2. Click **New**\
 
-4.  Vá em **Importar**\
-5.  Selecione o arquivo:
+3. Create a database named:
 
-    database.sql
+   dieta_db
 
-6.  Clique em **Executar**
+4. Go to **Import**\
 
-------------------------------------------------------------------------
+5. Select the file:
 
-### 5️⃣ Configuração do banco de dados
+   database.sql
 
-O arquivo `conexao.php` já está configurado para ambiente local (XAMPP).
+6. Click **Execute**
 
-Certifique-se apenas de que o banco criado tenha o mesmo nome definido no arquivo (`dieta_db`).
+---
 
-------------------------------------------------------------------------
+### **5️⃣ Database configuration**
 
-### **6️⃣ Acessar o sistema**
+The `conexao.php` file is already configured for the local environment (XAMPP).
 
-Abra no navegador:
+Just make sure the created database has the same name defined in the file (`dieta_db`).
 
-    http://localhost/calculadora-nutricional/
+---
 
-------------------------------------------------------------------------
+### **6️⃣ Access the system**
 
+Open in your browser:
 
-## 📁 Estrutura do Projeto
+```
+http://localhost/calculadora-nutricional/
+```
+
+---
+
+## 📁 Project Structure
 
 calculadora-nutricional
 │
-├── css/              # Estilos do sistema
-├── img/              # Imagens e assets
-│   └── imagens/      # Screenshots usadas no README
-├── conexao.php       # Conexão com banco de dados
-├── login.php         # Tela de autenticação
-├── dashboard.php     # Área do usuário
-├── desempenho.php    # Página de gráficos
-├── processa.php      # Processamento de cálculos
-└── database.sql      # Estrutura do banco
+├── css/              # System styles
+├── img/              # Images and assets
+│   └── imagens/      # Screenshots used in the README
+├── conexao.php       # Database connection
+├── login.php         # Authentication page
+├── dashboard.php     # User dashboard
+├── desempenho.php    # Charts page
+├── processa.php      # Calculation processing
+└── database.sql      # Database structure
 
-## 🌐 Demonstração
+---
 
-🔗 **Acesse o sistema online:**
+## 🌐 Live Demo
+
+🔗 **Access the system online:**
 
 https://calculadoranutricional.lovestoblog.com
-------------------------------------------------------------------------
 
-## 👨‍💻 Autor
+---
+
+## 👨‍💻 Author
 
 Gabriel Pereira Schwanke
 
-Estudante de Análise e Desenvolvimento de Sistemas.
+Student of Systems Analysis and Development.
 
-Projeto acadêmico desenvolvido como aplicação web full-stack utilizando PHP, MySQL e JavaScript.
+Academic project developed as a full-stack web application using PHP, MySQL, and JavaScript.
