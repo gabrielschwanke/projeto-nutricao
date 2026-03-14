@@ -48,15 +48,19 @@ usuário durante sua evolução nutricional.
 
 ------------------------------------------------------------------------
 
-## 📷 Capturas de Tela (opcional)
+## 📷 Capturas de Tela
 
-Adicione imagens reais do projeto na pasta `/imagens` e substitua os
-caminhos abaixo:
+### Tela de Login
+![Tela de Login](img/imagens/login.png)
 
-    ![Tela Inicial](imagens/tela-inicial.png)
-    ![Dashboard](imagens/dashboard.png)
-    ![Cálculo de Macronutrientes](imagens/calculo-macro.png)
+### Dashboard
+![Dashboard](img/imagens/dashboard.png)
 
+### Cálculo de Macronutrientes
+![Cálculo](img/imagens/calculo.png)
+
+### Página de Desempenho
+![Desempenho](img/imagens/desempenho.png)
 ------------------------------------------------------------------------
 
 ## 📦 Como instalar e rodar localmente (XAMPP)
@@ -106,39 +110,22 @@ Abra o painel do XAMPP e ative:
 2.  Clique em **Novo**\
 3.  Crie o banco de dados com o nome:
 
-```{=html}
-<!-- -->
-```
-    calculadora_nutricional
+    dieta_db
 
 4.  Vá em **Importar**\
 5.  Selecione o arquivo:
 
-```{=html}
-<!-- -->
-```
     database.sql
 
 6.  Clique em **Executar**
 
 ------------------------------------------------------------------------
 
-### **5️⃣ Ajustar arquivo de conexão**
+### 5️⃣ Configuração do banco de dados
 
-``` php
-<?php
-$host = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "calculadora_nutricional";
+O arquivo `conexao.php` já está configurado para ambiente local (XAMPP).
 
-$conexao = new mysqli($host, $usuario, $senha, $banco);
-
-if ($conexao->connect_error) {
-    die("Erro na conexão: " . $conexao->connect_error);
-}
-?>
-```
+Certifique-se apenas de que o banco criado tenha o mesmo nome definido no arquivo (`dieta_db`).
 
 ------------------------------------------------------------------------
 
@@ -150,80 +137,32 @@ Abra no navegador:
 
 ------------------------------------------------------------------------
 
-# ☁️ Deploy em Servidor (InfinityFree ou outro)
 
-Se você quiser hospedar seu sistema online, siga estes passos:
+## 📁 Estrutura do Projeto
 
+calculadora-nutricional
+│
+├── css/              # Estilos do sistema
+├── img/              # Imagens e assets
+│   └── imagens/      # Screenshots usadas no README
+├── conexao.php       # Conexão com banco de dados
+├── login.php         # Tela de autenticação
+├── dashboard.php     # Área do usuário
+├── desempenho.php    # Página de gráficos
+├── processa.php      # Processamento de cálculos
+└── database.sql      # Estrutura do banco
+
+## 🌐 Demonstração
+
+🔗 **Acesse o sistema online:**
+
+https://calculadoranutricional.lovestoblog.com
 ------------------------------------------------------------------------
 
-### **1️⃣ Criar conta no InfinityFree**
+## 👨‍💻 Autor
 
-https://www.infinityfree.com/
+Gabriel Pereira Schwanke
 
-Crie seu domínio gratuito ou subdomínio fornecido pela plataforma.
+Estudante de Análise e Desenvolvimento de Sistemas.
 
-------------------------------------------------------------------------
-
-### **2️⃣ Enviar arquivos via Gerenciador de Arquivos ou FTP**
-
-Coloque todos os arquivos dentro da pasta:
-
-    /htdocs
-
-------------------------------------------------------------------------
-
-### **3️⃣ Criar o banco de dados no painel**
-
-1.  Acesse o painel do InfinityFree\
-2.  Vá em **MySQL Databases**\
-3.  Crie um novo banco\
-4.  Anote:
-    -   DB Name\
-    -   DB User\
-    -   DB Password\
-    -   Hostname (geralmente algo como `sqlXXX.epizy.com`)
-
-------------------------------------------------------------------------
-
-### **4️⃣ Importar o database.sql**
-
-1.  Acesse o **phpMyAdmin do InfinityFree**\
-2.  Clique no banco criado\
-3.  Vá em **Importar**\
-4.  Selecione `database.sql`\
-5.  Execute
-
-------------------------------------------------------------------------
-
-### **5️⃣ Configurar `conexao.php` com as credenciais do host**
-
-``` php
-<?php
-$host = "sql305.epizy.com";   // Host do InfinityFree
-$usuario = "epiz_123456789";  // Usuário do banco
-$senha = "SENHADOBANCO";      // Senha do banco
-$banco = "epiz_123456789_calc"; // Nome do banco
-
-$conexao = new mysqli($host, $usuario, $senha, $banco);
-
-if ($conexao->connect_error) {
-    die("Erro na conexão: " . $conexao->connect_error);
-}
-?>
-```
-
-------------------------------------------------------------------------
-
-### **6️⃣ Acessar seu sistema no navegador**
-
-Exemplo:
-
-    https://seuprojeto.infinityfreeapp.com
-
-------------------------------------------------------------------------
-
-# 👤 Autor
-
-**Gabriel Pereira Schwanke**\
-Projeto acadêmico desenvolvido para o curso de **Análise e
-Desenvolvimento de Sistemas**.
+Projeto acadêmico desenvolvido como aplicação web full-stack utilizando PHP, MySQL e JavaScript.
