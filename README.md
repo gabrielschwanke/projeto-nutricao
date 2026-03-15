@@ -1,4 +1,4 @@
-# 🥗 Nutrition Calculator --- Macronutrients & Dietary Tips
+#  Nutrition Calculator --- Macronutrients & Dietary Tips
 
 A complete system developed using **PHP + MySQL** to calculate the
 ideal amount of **macronutrients** (proteins, carbohydrates, and fats)
@@ -36,7 +36,7 @@ throughout their nutritional progress.
   * Support\
   * Plans
 
-* 🎨 **Modern interface**
+* **Modern interface**
 
   * Fully responsive
   * Animated components
@@ -75,7 +75,7 @@ throughout their nutritional progress.
 
 ---
 
-## 📦 How to Install and Run Locally (XAMPP)
+##  How to Install and Run Locally (XAMPP)
 
 ### 🔧 Prerequisites
 
@@ -178,7 +178,7 @@ calculadora-nutricional
 
 🔗 **Access the system online:**
 
-https://calculadoranutricional.lovestoblog.com
+https://formulafit.infinityfree.me
 
 ---
 
